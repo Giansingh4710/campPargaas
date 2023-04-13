@@ -15,12 +15,7 @@
         Camp Pargaas
       </div>
       <div id="headerItemLinks">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a>Sign Up</a></li>
-          <li><a>Donate</a></li>
-          <li><a>Contact Us</a></li>
-        </ul>
+        <ul></ul>
       </div>
       <div id="headerItemHamburger">
         <a href="#menu" id="hamburger-menu"></a>
@@ -28,12 +23,7 @@
     </header>
 
     <nav id="menu">
-      <ul class="links">
-        <li><a href="index.html">Home</a></li>
-        <li><a>Sign Up</a></li>
-        <li><a>Donate</a></li>
-        <li><a>Contact Us</a></li>
-      </ul>
+      <ul class="links"></ul>
     </nav>
 
     <section id="banner" class="bg-img" data-bg="banner1.jpg">
@@ -96,12 +86,57 @@
 
     <ul id="icons_lst">
       <li>
-        <a href="https://www.facebook.com/camppargaas" class="icon fa-facebook"></a>
+        <a
+          href="https://www.facebook.com/camppargaas"
+          class="icon fa-facebook"
+        ></a>
       </li>
       <li>
-        <a href="https://www.instagram.com/camppargaas/" class="icon fa-instagram"></a>
+        <a
+          href="https://www.instagram.com/camppargaas/"
+          class="icon fa-instagram"
+        ></a>
       </li>
     </ul>
+
+    <script>
+      function putItemsInLists() {
+        function makeLiItem(name, link) {
+          const li = document.createElement('li')
+          const a = document.createElement('a')
+          a.innerText = name
+          a.href = link
+          li.appendChild(a)
+          return li
+        }
+
+        const list1 = document
+          .getElementById('headerItemLinks')
+          .getElementsByTagName('ul')[0]
+        const list2 = document
+          .getElementById('menu')
+          .getElementsByTagName('ul')[0]
+
+        const items = [
+          { title: 'Home', href: '' },
+          {
+            title: 'Sign Up',
+            href: 'https://form.jotform.com/jagjit86/summer2023',
+          },
+          { title: 'Donate', href: '' },
+          { title: 'Contact Us', href: '' },
+        ]
+
+        for (const item of items) {
+          const i1 = makeLiItem(item.title, item.href)
+          const i2 = makeLiItem(item.title, item.href)
+          list1.appendChild(i1)
+          list2.appendChild(i2)
+        }
+        console.log(list1)
+      }
+      putItemsInLists()
+    </script>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
